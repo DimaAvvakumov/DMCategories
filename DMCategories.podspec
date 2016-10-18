@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
 
   s.source       = { :git => "https://github.com/DimaAvvakumov/DMCategories.git" }
-  s.source_files = "categories/*.{h,m}"
-  s.public_header_files = "categories/*.{h}"
+  s.source_files = "categories/**/*.{h,m}"
+  s.public_header_files = "categories/**/*.{h}"
   s.framework    = "UIKit"
   s.requires_arc = true
 
