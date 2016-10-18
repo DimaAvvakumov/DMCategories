@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+// categories
+#import "DMCategories.h"
+
 @interface ViewController ()
 
 @end

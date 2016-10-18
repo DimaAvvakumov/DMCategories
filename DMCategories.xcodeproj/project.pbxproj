@@ -13,6 +13,12 @@
 		188F96E41DB5ED3D0048CA37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188F96E21DB5ED3D0048CA37 /* Main.storyboard */; };
 		188F96E61DB5ED3D0048CA37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F96E51DB5ED3D0048CA37 /* Assets.xcassets */; };
 		188F96E91DB5ED3D0048CA37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188F96E71DB5ED3D0048CA37 /* LaunchScreen.storyboard */; };
+		188F97041DB5EF0A0048CA37 /* UIView+DMAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96F31DB5EF0A0048CA37 /* UIView+DMAnimation.m */; };
+		188F97051DB5EF0A0048CA37 /* UIButton+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96F71DB5EF0A0048CA37 /* UIButton+BackgroundColor.m */; };
+		188F97061DB5EF0A0048CA37 /* NSString+ApplicationFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96FA1DB5EF0A0048CA37 /* NSString+ApplicationFonts.m */; };
+		188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96FD1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m */; };
+		188F97081DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97001DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m */; };
+		188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,19 @@
 		188F96E51DB5ED3D0048CA37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		188F96E81DB5ED3D0048CA37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		188F96EA1DB5ED3D0048CA37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188F96F21DB5EF0A0048CA37 /* UIView+DMAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DMAnimation.h"; sourceTree = "<group>"; };
+		188F96F31DB5EF0A0048CA37 /* UIView+DMAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DMAnimation.m"; sourceTree = "<group>"; };
+		188F96F61DB5EF0A0048CA37 /* UIButton+BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BackgroundColor.h"; sourceTree = "<group>"; };
+		188F96F71DB5EF0A0048CA37 /* UIButton+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BackgroundColor.m"; sourceTree = "<group>"; };
+		188F96F91DB5EF0A0048CA37 /* NSString+ApplicationFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ApplicationFonts.h"; sourceTree = "<group>"; };
+		188F96FA1DB5EF0A0048CA37 /* NSString+ApplicationFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ApplicationFonts.m"; sourceTree = "<group>"; };
+		188F96FC1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KeyboardBehavior.h"; sourceTree = "<group>"; };
+		188F96FD1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KeyboardBehavior.m"; sourceTree = "<group>"; };
+		188F96FF1DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SimpleGetters.h"; sourceTree = "<group>"; };
+		188F97001DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SimpleGetters.m"; sourceTree = "<group>"; };
+		188F97021DB5EF0A0048CA37 /* NSString+TextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextSize.h"; sourceTree = "<group>"; };
+		188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextSize.m"; sourceTree = "<group>"; };
+		188F970A1DB5EF190048CA37 /* DMCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMCategories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +61,7 @@
 		188F96CD1DB5ED3C0048CA37 = {
 			isa = PBXGroup;
 			children = (
+				188F96F01DB5EF0A0048CA37 /* categories */,
 				188F96D81DB5ED3D0048CA37 /* DMCategories */,
 				188F96D71DB5ED3D0048CA37 /* Products */,
 			);
@@ -77,6 +97,82 @@
 				188F96DA1DB5ED3D0048CA37 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		188F96F01DB5EF0A0048CA37 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				188F96F11DB5EF0A0048CA37 /* animations */,
+				188F96F41DB5EF0A0048CA37 /* buttons */,
+				188F96F81DB5EF0A0048CA37 /* fonts */,
+				188F96FB1DB5EF0A0048CA37 /* keyboard */,
+				188F96FE1DB5EF0A0048CA37 /* simpleGetters */,
+				188F97011DB5EF0A0048CA37 /* textSize */,
+				188F970A1DB5EF190048CA37 /* DMCategories.h */,
+			);
+			path = categories;
+			sourceTree = "<group>";
+		};
+		188F96F11DB5EF0A0048CA37 /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				188F96F21DB5EF0A0048CA37 /* UIView+DMAnimation.h */,
+				188F96F31DB5EF0A0048CA37 /* UIView+DMAnimation.m */,
+			);
+			path = animations;
+			sourceTree = "<group>";
+		};
+		188F96F41DB5EF0A0048CA37 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				188F96F51DB5EF0A0048CA37 /* BackgroundColor */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		188F96F51DB5EF0A0048CA37 /* BackgroundColor */ = {
+			isa = PBXGroup;
+			children = (
+				188F96F61DB5EF0A0048CA37 /* UIButton+BackgroundColor.h */,
+				188F96F71DB5EF0A0048CA37 /* UIButton+BackgroundColor.m */,
+			);
+			path = BackgroundColor;
+			sourceTree = "<group>";
+		};
+		188F96F81DB5EF0A0048CA37 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				188F96F91DB5EF0A0048CA37 /* NSString+ApplicationFonts.h */,
+				188F96FA1DB5EF0A0048CA37 /* NSString+ApplicationFonts.m */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		188F96FB1DB5EF0A0048CA37 /* keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				188F96FC1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.h */,
+				188F96FD1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m */,
+			);
+			path = keyboard;
+			sourceTree = "<group>";
+		};
+		188F96FE1DB5EF0A0048CA37 /* simpleGetters */ = {
+			isa = PBXGroup;
+			children = (
+				188F96FF1DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.h */,
+				188F97001DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m */,
+			);
+			path = simpleGetters;
+			sourceTree = "<group>";
+		};
+		188F97011DB5EF0A0048CA37 /* textSize */ = {
+			isa = PBXGroup;
+			children = (
+				188F97021DB5EF0A0048CA37 /* NSString+TextSize.h */,
+				188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */,
+			);
+			path = textSize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188F97041DB5EF0A0048CA37 /* UIView+DMAnimation.m in Sources */,
+				188F97081DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m in Sources */,
 				188F96E11DB5ED3D0048CA37 /* ViewController.m in Sources */,
+				188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */,
+				188F97051DB5EF0A0048CA37 /* UIButton+BackgroundColor.m in Sources */,
 				188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */,
+				188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */,
 				188F96DB1DB5ED3D0048CA37 /* main.m in Sources */,
+				188F97061DB5EF0A0048CA37 /* NSString+ApplicationFonts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
