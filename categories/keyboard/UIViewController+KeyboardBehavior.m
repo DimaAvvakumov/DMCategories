@@ -10,7 +10,23 @@
 
 #import <objc/runtime.h>
 
+@interface UIViewController ()
+
+@property (strong, nonatomic) UIButton *kb_hideButton;
+
+@end
+
 @implementation UIViewController (KeyboardBehavior)
+
+#pragma mark - Properties
+
+- (UIButton *)kb_hideButton {
+    return objc_getAssociatedObject(self, @selector(kb_hideButton));
+}
+
+- (void)setKb_hideButton:(UIButton *)kb_hideButton {
+    objc_setAssociatedObject(self, @selector(kb_hideButton), kb_hideButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 #pragma mark - Properties
 
@@ -53,6 +69,8 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
 - (void)keyboardBehavior_viewWillAppear:(BOOL)animated {
     [self keyboardBehavior_viewWillAppear:animated];
     
+    [self keyboardBehavior_createHideButton];
+    
     // check observing
     BOOL needObserving = [self kb_shouldKeyboardObserve];
     if (needObserving == NO) return;
@@ -72,6 +90,50 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     [self kb_stopObservingKeyboardNotifications];
 }
 
+- (void)keyboardBehavior_createHideButton {
+    /* manager */
+    DMKeyboardManager *kbManager = [self kb_keyboardManager];
+    if (kbManager.appendKeyboardButton == NO) return;
+    
+    UIButton *hideButton = self.kb_hideButton;
+    if (hideButton) return;
+    
+    /* create button */
+    hideButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    hideButton.frame = CGRectMake(self.view.bounds.size.width, 0.0, 100.0, 40.0);
+    hideButton.hidden = YES;
+    [hideButton addTarget:self action:@selector(kb_hideKeyboardTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    /* image */
+    NSString *title = kbManager.keyboardTitle;
+    UIImage *image = kbManager.keyboardImage;
+    if (image) {
+        [hideButton setImage:image forState:UIControlStateNormal];
+        
+        /* update frame */
+        CGRect frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
+        [hideButton setFrame:frame];
+    }
+    if (title) {
+        [hideButton setTitle:title forState:UIControlStateNormal];
+    }
+    
+    /* append */
+    [self.view addSubview:hideButton];
+    
+    self.kb_hideButton = hideButton;
+}
+
+- (void)keyboardBehavior_setHideButtonVisible:(BOOL)visible keyboardHeight:(CGFloat)keyboardHeight {
+    UIButton *hideButton = self.kb_hideButton;
+    
+    CGRect frame = hideButton.frame;
+    frame.origin.x = self.view.bounds.size.width - frame.size.width;
+    frame.origin.y = self.view.bounds.size.height - keyboardHeight - frame.size.height;
+    hideButton.frame = frame;
+    
+    hideButton.hidden = !visible;
+}
 
 #pragma mark - Control methods
 
@@ -95,6 +157,14 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
 
 - (void)kb_keyboardShowOrHideAnimationDidFinishedWithHeight:(CGFloat)height {
     // override me if needed
+}
+
+- (DMKeyboardManager *)kb_keyboardManager {
+    return [DMKeyboardManager sharedInstance];
+}
+
+- (void)kb_hideKeyboardTapped:(UIButton *)sender {
+    
 }
 
 #pragma mark - Implementation methods
@@ -153,6 +223,8 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     [self kb_keyboardShowOrHideAnimationWithHeight:keyboardHeight
                                  animationDuration:animationDuration
                                     animationCurve:animationCurve];
+    
+    [self keyboardBehavior_setHideButtonVisible:isShowNotification keyboardHeight:keyboardHeight];
     
     [UIView commitAnimations];
 }

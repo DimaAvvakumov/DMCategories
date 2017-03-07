@@ -19,6 +19,7 @@
 		188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96FD1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m */; };
 		188F97081DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97001DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m */; };
 		188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */; };
+		18FEBFB31E6EBB9200531EA2 /* DMKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FEBFB21E6EBB9200531EA2 /* DMKeyboardManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		188F97021DB5EF0A0048CA37 /* NSString+TextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextSize.h"; sourceTree = "<group>"; };
 		188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextSize.m"; sourceTree = "<group>"; };
 		188F970A1DB5EF190048CA37 /* DMCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMCategories.h; sourceTree = "<group>"; };
+		18FEBFB11E6EBB9200531EA2 /* DMKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMKeyboardManager.h; sourceTree = "<group>"; };
+		18FEBFB21E6EBB9200531EA2 /* DMKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMKeyboardManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 		188F96FB1DB5EF0A0048CA37 /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				18FEBFB11E6EBB9200531EA2 /* DMKeyboardManager.h */,
+				18FEBFB21E6EBB9200531EA2 /* DMKeyboardManager.m */,
 				188F96FC1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.h */,
 				188F96FD1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m */,
 			);
@@ -250,6 +255,7 @@
 				188F97041DB5EF0A0048CA37 /* UIView+DMAnimation.m in Sources */,
 				188F97081DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m in Sources */,
 				188F96E11DB5ED3D0048CA37 /* ViewController.m in Sources */,
+				18FEBFB31E6EBB9200531EA2 /* DMKeyboardManager.m in Sources */,
 				188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */,
 				188F97051DB5EF0A0048CA37 /* UIButton+BackgroundColor.m in Sources */,
 				188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */,
@@ -412,6 +418,7 @@
 				188F96EF1DB5ED3D0048CA37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
