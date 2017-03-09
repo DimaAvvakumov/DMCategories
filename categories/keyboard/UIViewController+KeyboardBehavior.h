@@ -28,6 +28,7 @@
 - (void)kb_keyboardShowOrHideAnimationDidFinishedWithHeight:(CGFloat)height;
 
 - (DMKeyboardManager *)kb_keyboardManager;
-- (void)kb_hideKeyboardTapped:(UIButton *)sender;
+- (BOOL)kb_shouldPresentHideButton;
+- (void)kb_registerFirstResponder:(UIResponder *)firstResponder;
 
 @end

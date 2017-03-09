@@ -15,8 +15,6 @@
 + (DMKeyboardManager *) sharedInstance;
 
 /* show / hide button */
-@property (assign, nonatomic) BOOL appendKeyboardButton;
-
 @property (strong, nonatomic) UIImage *keyboardImage;
 @property (strong, nonatomic) NSString *keyboardTitle;
 
