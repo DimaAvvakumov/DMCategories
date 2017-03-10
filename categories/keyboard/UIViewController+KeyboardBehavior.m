@@ -87,6 +87,8 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     
     // start observing
     [self kb_startObservingKeyboardNotifications];
+    
+    [self keyboardBehavior_setHideButtonVisible:NO keyboardHeight:0.0];
 }
 
 - (void)keyboardBehavior_viewDidDisappear:(BOOL)animated {
