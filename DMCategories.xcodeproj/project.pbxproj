@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182DC4F41E9F6FBD00E39B43 /* UIButton+NoAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */; };
 		188F96DB1DB5ED3D0048CA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96DA1DB5ED3D0048CA37 /* main.m */; };
 		188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96DD1DB5ED3D0048CA37 /* AppDelegate.m */; };
 		188F96E11DB5ED3D0048CA37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96E01DB5ED3D0048CA37 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182DC4F21E9F6FBD00E39B43 /* UIButton+NoAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NoAnimation.h"; sourceTree = "<group>"; };
+		182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NoAnimation.m"; sourceTree = "<group>"; };
 		188F96D61DB5ED3D0048CA37 /* DMCategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMCategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188F96DA1DB5ED3D0048CA37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188F96DC1DB5ED3D0048CA37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182DC4EE1E9F6F8500E39B43 /* NoAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				182DC4F21E9F6FBD00E39B43 /* UIButton+NoAnimation.h */,
+				182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */,
+			);
+			path = NoAnimation;
+			sourceTree = "<group>";
+		};
 		188F96CD1DB5ED3C0048CA37 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				188F96F51DB5EF0A0048CA37 /* BackgroundColor */,
+				182DC4EE1E9F6F8500E39B43 /* NoAnimation */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -254,6 +267,7 @@
 			files = (
 				188F97041DB5EF0A0048CA37 /* UIView+DMAnimation.m in Sources */,
 				188F97081DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m in Sources */,
+				182DC4F41E9F6FBD00E39B43 /* UIButton+NoAnimation.m in Sources */,
 				188F96E11DB5ED3D0048CA37 /* ViewController.m in Sources */,
 				18FEBFB31E6EBB9200531EA2 /* DMKeyboardManager.m in Sources */,
 				188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */,

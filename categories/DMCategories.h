@@ -11,6 +11,7 @@
 
 #import "UIView+DMAnimation.h"
 #import "UIButton+BackgroundColor.h"
+#import "UIButton+NoAnimation.h"
 #import "UIViewController+KeyboardBehavior.h"
 #import "NSDictionary+SimpleGetters.h"
 #import "NSString+TextSize.h"
