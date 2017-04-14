@@ -20,6 +20,7 @@
 		188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96FD1DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m */; };
 		188F97081DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97001DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m */; };
 		188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */; };
+		18A4FA2D1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4FA2C1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m */; };
 		18FEBFB31E6EBB9200531EA2 /* DMKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FEBFB21E6EBB9200531EA2 /* DMKeyboardManager.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		188F97021DB5EF0A0048CA37 /* NSString+TextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextSize.h"; sourceTree = "<group>"; };
 		188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextSize.m"; sourceTree = "<group>"; };
 		188F970A1DB5EF190048CA37 /* DMCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMCategories.h; sourceTree = "<group>"; };
+		18A4FA2B1EA0DB91004A5643 /* UIButton+TemporaryDisabled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TemporaryDisabled.h"; sourceTree = "<group>"; };
+		18A4FA2C1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TemporaryDisabled.m"; sourceTree = "<group>"; };
 		18FEBFB11E6EBB9200531EA2 /* DMKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMKeyboardManager.h; sourceTree = "<group>"; };
 		18FEBFB21E6EBB9200531EA2 /* DMKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMKeyboardManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +145,7 @@
 			children = (
 				188F96F51DB5EF0A0048CA37 /* BackgroundColor */,
 				182DC4EE1E9F6F8500E39B43 /* NoAnimation */,
+				18A4FA2A1EA0DB87004A5643 /* TemporaryDisabled */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -191,6 +195,15 @@
 				188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */,
 			);
 			path = textSize;
+			sourceTree = "<group>";
+		};
+		18A4FA2A1EA0DB87004A5643 /* TemporaryDisabled */ = {
+			isa = PBXGroup;
+			children = (
+				18A4FA2B1EA0DB91004A5643 /* UIButton+TemporaryDisabled.h */,
+				18A4FA2C1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m */,
+			);
+			path = TemporaryDisabled;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +289,7 @@
 				188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */,
 				188F96DB1DB5ED3D0048CA37 /* main.m in Sources */,
 				188F97061DB5EF0A0048CA37 /* NSString+ApplicationFonts.m in Sources */,
+				18A4FA2D1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
