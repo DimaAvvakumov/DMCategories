@@ -149,9 +149,11 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     UIButton *hideButton = self.kb_hideButton;
     if (hideButton == nil) return;
     
+    CGFloat offset = [self kb_hideButtonOffset];
+    
     CGRect frame = hideButton.frame;
     frame.origin.x = self.view.bounds.size.width - frame.size.width;
-    frame.origin.y = self.view.bounds.size.height - [self kb_hideButtonOffset] - keyboardHeight - frame.size.height;
+    frame.origin.y = self.view.bounds.size.height - keyboardHeight - frame.size.height - offset;
     hideButton.frame = frame;
     
     hideButton.hidden = !visible;
