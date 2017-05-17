@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) UIButton *kb_hideButton;
 
+@property (assign, nonatomic) BOOL kb_keyboardObserved;
+
 @end
 
 @implementation UIViewController (KeyboardBehavior)
@@ -26,16 +28,6 @@
 
 - (void)setKb_hideButton:(UIButton *)kb_hideButton {
     objc_setAssociatedObject(self, @selector(kb_hideButton), kb_hideButton, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-#pragma mark - Properties firstResponder
-
-- (UIResponder *)kb_firstResponder {
-    return objc_getAssociatedObject(self, @selector(kb_firstResponder));
-}
-
-- (void)setKb_firstResponder:(UIResponder *)kb_firstResponder {
-    objc_setAssociatedObject(self, @selector(kb_firstResponder), kb_firstResponder, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 #pragma mark - Properties isKeyboardPresented
@@ -51,6 +43,17 @@
 
 - (void)kb_setKeyboardHeight:(CGFloat)keyboardHeight {
     objc_setAssociatedObject(self, @selector(kb_keyboardHeight), @(keyboardHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+#pragma mark - Properties isKeyboardPresented
+
+- (BOOL)kb_keyboardObserved {
+    NSNumber *val = objc_getAssociatedObject(self, @selector(kb_keyboardObserved));
+    return val.boolValue;
+}
+
+- (void)setKb_keyboardObserved:(BOOL)kb_keyboardObserved {
+    objc_setAssociatedObject(self, @selector(kb_keyboardObserved), @(kb_keyboardObserved), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 #pragma mark - Swizzling
@@ -71,6 +74,7 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
         Class class = [self class];
         
         keyboardBehavior_swizzleInstanceMethod(class, @selector(viewWillAppear:), @selector(keyboardBehavior_viewWillAppear:));
+        keyboardBehavior_swizzleInstanceMethod(class, @selector(viewWillDisappear:), @selector(keyboardBehavior_viewWillDisappear:));
         keyboardBehavior_swizzleInstanceMethod(class, @selector(viewDidDisappear:), @selector(keyboardBehavior_viewDidDisappear:));
 
     });
@@ -86,14 +90,22 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     if (needObserving == NO) return;
     
     // start observing
+    self.kb_keyboardObserved = YES;
     [self kb_startObservingKeyboardNotifications];
     
     [self keyboardBehavior_setHideButtonVisible:NO keyboardHeight:0.0];
 }
 
+- (void)keyboardBehavior_viewWillDisappear:(BOOL)animated {
+    [self keyboardBehavior_viewWillDisappear:animated];
+    
+    // pause observing
+    self.kb_keyboardObserved = NO;
+}
+
 - (void)keyboardBehavior_viewDidDisappear:(BOOL)animated {
     [self keyboardBehavior_viewDidDisappear:animated];
-    
+
     // check observing
     BOOL needObserving = [self kb_shouldKeyboardObserve];
     if (needObserving == NO) return;
@@ -194,25 +206,8 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     return 0.0;
 }
 
-- (void)kb_registerFirstResponder:(UIResponder *)firstResponder {
-    if (![firstResponder isKindOfClass:[UIResponder class]]) return;
-    
-    [self setKb_firstResponder:firstResponder];
-}
-
 - (void)kb_hideKeyboardTapped:(UIButton *)sender {
-    [self kb_hideKeyboard];
-}
-
-- (void)kb_hideKeyboard {
-    UIResponder *responder = self.kb_firstResponder;
-    if (responder == nil) return;
-    
-    [self setKb_firstResponder:nil];
-    
-    if (responder.isFirstResponder) {
-        [responder resignFirstResponder];
-    }
+    [self.kb_keyboardManager resignKeyboard];
 }
 
 #pragma mark - Implementation methods
@@ -242,6 +237,8 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
 #pragma mark - Private
 
 - (void)kb_keyboardWillShowOrHideNotification:(NSNotification *)notification {
+    if (!self.kb_keyboardObserved) return;
+    
     NSDictionary *userInfo = notification.userInfo;
     
     // When keyboard is hiding, the height value from UIKeyboardFrameEndUserInfoKey sometimes is incorrect
@@ -278,7 +275,7 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     
     BOOL isHideNotification = !isShowNotification;
     if (isHideNotification) {
-        [self setKb_firstResponder:nil];
+        [self.kb_keyboardManager resignKeyboard];
     }
 }
 

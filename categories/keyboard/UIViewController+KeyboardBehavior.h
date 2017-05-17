@@ -30,6 +30,5 @@
 - (DMKeyboardManager *)kb_keyboardManager;
 - (BOOL)kb_shouldPresentHideButton;
 - (CGFloat)kb_hideButtonOffset;
-- (void)kb_registerFirstResponder:(UIResponder *)firstResponder;
 
 @end

@@ -18,4 +18,6 @@
 @property (strong, nonatomic) UIImage *keyboardImage;
 @property (strong, nonatomic) NSString *keyboardTitle;
 
+- (void)resignKeyboard;
+
 @end
