@@ -18,6 +18,9 @@
 @property (strong, nonatomic) UIImage *keyboardImage;
 @property (strong, nonatomic) NSString *keyboardTitle;
 
+/* height */
+@property (assign, nonatomic) CGFloat keyboardHeight;
+
 - (void)resignKeyboard;
 
 @end

@@ -32,31 +32,33 @@
     self = [super init];
     if (self) {
         self.kb_firstResponder = nil;
-        [self kb_startObservingDidBeginEditingNotification];
+        [self startObservingDidBeginEditingNotification];
+        [self startObservingKeyboardNotifications];
     }
     return self;
 }
 
 - (void)dealloc {
-    [self kb_stopObservingDidBeginEditingNotification];
+    [self stopObservingDidBeginEditingNotification];
+    [self stopObservingKeyboardNotifications];
 }
 
-#pragma mark - Implementation methods
+#pragma mark - Editing Notification
 
-- (void)kb_startObservingDidBeginEditingNotification {
+- (void)startObservingDidBeginEditingNotification {
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(kb_textDidBeginEditing:)
+                                             selector:@selector(textDidBeginEditing:)
                                                  name:UITextFieldTextDidBeginEditingNotification
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(kb_textDidBeginEditing:)
+                                             selector:@selector(textDidBeginEditing:)
                                                  name:UITextViewTextDidBeginEditingNotification
                                                object:nil];
 }
 
-- (void)kb_stopObservingDidBeginEditingNotification {
+- (void)stopObservingDidBeginEditingNotification {
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UITextFieldTextDidBeginEditingNotification
@@ -67,11 +69,49 @@
                                                   object:nil];
 }
 
+#pragma mark - Keyboard Notification
+
+- (void)startObservingKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShowOrHideNotification:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShowOrHideNotification:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void)stopObservingKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+}
+
 #pragma mark - Input Notifications
 
-- (void)kb_textDidBeginEditing:(NSNotification *)notification {
+- (void)textDidBeginEditing:(NSNotification *)notification {
     self.kb_firstResponder = notification.object;
 
+}
+
+- (void)keyboardWillShowOrHideNotification:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+
+    CGRect keyboardFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    UIView *view = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    CGRect convertedRect = [view convertRect:keyboardFrame fromView:nil];
+    BOOL isShowNotification = [notification.name isEqualToString:UIKeyboardWillShowNotification];
+    CGFloat keyboardHeight = isShowNotification ? CGRectGetHeight(keyboardFrame) : 0.0;
+    
+
+    
+    self.keyboardHeight = keyboardHeight;
 }
 
 #pragma mark - Resign

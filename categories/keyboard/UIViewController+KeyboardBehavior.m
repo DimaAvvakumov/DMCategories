@@ -37,13 +37,14 @@
 }
 
 - (CGFloat)kb_keyboardHeight {
-    NSNumber *keyboardHeightNumber = objc_getAssociatedObject(self, @selector(kb_keyboardHeight));
-    return keyboardHeightNumber.floatValue;
+//    NSNumber *keyboardHeightNumber = objc_getAssociatedObject(self, @selector(kb_keyboardHeight));
+//    return keyboardHeightNumber.floatValue;
+    return [self.kb_keyboardManager keyboardHeight];
 }
-
-- (void)kb_setKeyboardHeight:(CGFloat)keyboardHeight {
-    objc_setAssociatedObject(self, @selector(kb_keyboardHeight), @(keyboardHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+//
+//- (void)kb_setKeyboardHeight:(CGFloat)keyboardHeight {
+//    objc_setAssociatedObject(self, @selector(kb_keyboardHeight), @(keyboardHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//}
 
 #pragma mark - Properties isKeyboardPresented
 
@@ -207,7 +208,7 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
 }
 
 - (void)kb_hideKeyboardTapped:(UIButton *)sender {
-    [self.kb_keyboardManager resignKeyboard];
+    [self kb_hideKeyboard];
 }
 
 #pragma mark - Implementation methods
@@ -248,7 +249,7 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     BOOL isShowNotification = [notification.name isEqualToString:UIKeyboardWillShowNotification];
     CGFloat keyboardHeight = isShowNotification ? CGRectGetHeight(convertedRect) : 0.0;
     
-    [self kb_setKeyboardHeight:keyboardHeight];
+//    [self kb_setKeyboardHeight:keyboardHeight];
     
     
     NSTimeInterval animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
@@ -275,13 +276,17 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     
     BOOL isHideNotification = !isShowNotification;
     if (isHideNotification) {
-        [self.kb_keyboardManager resignKeyboard];
+        [self kb_hideKeyboard];
     }
 }
 
 - (void)kb_keyboardAnimationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
     CGFloat keyboardHeight = [self kb_keyboardHeight];
     [self kb_keyboardShowOrHideAnimationDidFinishedWithHeight:keyboardHeight];
+}
+
+- (void)kb_hideKeyboard {
+    [self.kb_keyboardManager resignKeyboard];
 }
 
 @end
