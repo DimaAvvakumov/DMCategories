@@ -227,6 +227,7 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
+
 }
 
 #pragma mark - Private
@@ -242,6 +243,10 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     CGRect convertedRect = [self.view convertRect:keyboardFrame fromView:nil];
     BOOL isShowNotification = [notification.name isEqualToString:UIKeyboardWillShowNotification];
     CGFloat keyboardHeight = isShowNotification ? CGRectGetHeight(convertedRect) : 0.0;
+    
+    // application state
+    UIApplicationState state =  [[UIApplication sharedApplication] applicationState];
+    if (state != UIApplicationStateActive && keyboardHeight != 0.0) return;
     
     NSTimeInterval animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     UIViewAnimationCurve animationCurve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
