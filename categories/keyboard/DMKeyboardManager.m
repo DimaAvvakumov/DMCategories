@@ -10,7 +10,7 @@
 
 @interface DMKeyboardManager ()
 
-@property (assign, nonatomic) UIResponder *kb_firstResponder;
+@property (assign, nonatomic) UIResponder *firstResponder;
 
 @end
 
@@ -31,7 +31,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.kb_firstResponder = nil;
+        self.firstResponder = nil;
         [self startObservingDidBeginEditingNotification];
         [self startObservingKeyboardNotifications];
     }
@@ -96,7 +96,7 @@
 #pragma mark - Input Notifications
 
 - (void)textDidBeginEditing:(NSNotification *)notification {
-    self.kb_firstResponder = notification.object;
+    self.firstResponder = notification.object;
 
 }
 
@@ -113,10 +113,10 @@
 #pragma mark - Resign
 
 - (void)resignKeyboard {
-    UIResponder *responder = self.kb_firstResponder;
+    UIResponder *responder = self.firstResponder;
     if (responder == nil) return;
     
-    self.kb_firstResponder = nil;
+    self.firstResponder = nil;
     
     if (responder.isFirstResponder) {
         [responder resignFirstResponder];
