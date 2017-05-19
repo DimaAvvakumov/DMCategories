@@ -104,13 +104,9 @@
     NSDictionary *userInfo = notification.userInfo;
 
     CGRect keyboardFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-//    UIView *view = [UIApplication sharedApplication].keyWindow.rootViewController;
-//    CGRect convertedRect = [view convertRect:keyboardFrame fromView:nil];
     BOOL isShowNotification = [notification.name isEqualToString:UIKeyboardWillShowNotification];
     CGFloat keyboardHeight = isShowNotification ? CGRectGetHeight(keyboardFrame) : 0.0;
-    
 
-    
     self.keyboardHeight = keyboardHeight;
 }
 

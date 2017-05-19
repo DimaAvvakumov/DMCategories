@@ -37,14 +37,8 @@
 }
 
 - (CGFloat)kb_keyboardHeight {
-//    NSNumber *keyboardHeightNumber = objc_getAssociatedObject(self, @selector(kb_keyboardHeight));
-//    return keyboardHeightNumber.floatValue;
     return [self.kb_keyboardManager keyboardHeight];
 }
-//
-//- (void)kb_setKeyboardHeight:(CGFloat)keyboardHeight {
-//    objc_setAssociatedObject(self, @selector(kb_keyboardHeight), @(keyboardHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//}
 
 #pragma mark - Properties isKeyboardPresented
 
@@ -248,9 +242,6 @@ static void keyboardBehavior_swizzleInstanceMethod(Class c, SEL original, SEL re
     CGRect convertedRect = [self.view convertRect:keyboardFrame fromView:nil];
     BOOL isShowNotification = [notification.name isEqualToString:UIKeyboardWillShowNotification];
     CGFloat keyboardHeight = isShowNotification ? CGRectGetHeight(convertedRect) : 0.0;
-    
-//    [self kb_setKeyboardHeight:keyboardHeight];
-    
     
     NSTimeInterval animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     UIViewAnimationCurve animationCurve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
