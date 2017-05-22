@@ -16,5 +16,6 @@
 #import "UIViewController+KeyboardBehavior.h"
 #import "NSDictionary+SimpleGetters.h"
 #import "NSString+TextSize.h"
+#import "UIView+DMGeometry.h"
 
 #endif /* DMCategories_h */

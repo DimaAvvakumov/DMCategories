@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		182DC4F41E9F6FBD00E39B43 /* UIButton+NoAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */; };
+		183EF4441ED2F7A400B5FB0C /* UIView+DMGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EF4431ED2F7A400B5FB0C /* UIView+DMGeometry.m */; };
 		188F96DB1DB5ED3D0048CA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96DA1DB5ED3D0048CA37 /* main.m */; };
 		188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96DD1DB5ED3D0048CA37 /* AppDelegate.m */; };
 		188F96E11DB5ED3D0048CA37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96E01DB5ED3D0048CA37 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		182DC4F21E9F6FBD00E39B43 /* UIButton+NoAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NoAnimation.h"; sourceTree = "<group>"; };
 		182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NoAnimation.m"; sourceTree = "<group>"; };
+		183EF4421ED2F7A400B5FB0C /* UIView+DMGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DMGeometry.h"; sourceTree = "<group>"; };
+		183EF4431ED2F7A400B5FB0C /* UIView+DMGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DMGeometry.m"; sourceTree = "<group>"; };
 		188F96D61DB5ED3D0048CA37 /* DMCategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMCategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188F96DA1DB5ED3D0048CA37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188F96DC1DB5ED3D0048CA37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +79,15 @@
 			path = NoAnimation;
 			sourceTree = "<group>";
 		};
+		183EF4411ED2F78300B5FB0C /* geometric */ = {
+			isa = PBXGroup;
+			children = (
+				183EF4421ED2F7A400B5FB0C /* UIView+DMGeometry.h */,
+				183EF4431ED2F7A400B5FB0C /* UIView+DMGeometry.m */,
+			);
+			path = geometric;
+			sourceTree = "<group>";
+		};
 		188F96CD1DB5ED3C0048CA37 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +135,7 @@
 				188F96F11DB5EF0A0048CA37 /* animations */,
 				188F96F41DB5EF0A0048CA37 /* buttons */,
 				188F96F81DB5EF0A0048CA37 /* fonts */,
+				183EF4411ED2F78300B5FB0C /* geometric */,
 				188F96FB1DB5EF0A0048CA37 /* keyboard */,
 				188F96FE1DB5EF0A0048CA37 /* simpleGetters */,
 				188F97011DB5EF0A0048CA37 /* textSize */,
@@ -288,6 +301,7 @@
 				188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */,
 				188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */,
 				188F96DB1DB5ED3D0048CA37 /* main.m in Sources */,
+				183EF4441ED2F7A400B5FB0C /* UIView+DMGeometry.m in Sources */,
 				188F97061DB5EF0A0048CA37 /* NSString+ApplicationFonts.m in Sources */,
 				18A4FA2D1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m in Sources */,
 			);
