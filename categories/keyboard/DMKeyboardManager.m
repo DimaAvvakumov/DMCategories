@@ -10,7 +10,7 @@
 
 @interface DMKeyboardManager ()
 
-@property (assign, nonatomic) UIResponder *firstResponder;
+@property (weak, nonatomic) UIResponder *firstResponder;
 
 @end
 
@@ -96,8 +96,12 @@
 #pragma mark - Input Notifications
 
 - (void)textDidBeginEditing:(NSNotification *)notification {
-    self.firstResponder = notification.object;
-
+    id responder = notification.object;
+    
+    if (!responder) return;
+    if (![responder isKindOfClass:[UIResponder class]]) return;
+    
+    self.firstResponder = responder;
 }
 
 - (void)keyboardWillShowOrHideNotification:(NSNotification *)notification {
