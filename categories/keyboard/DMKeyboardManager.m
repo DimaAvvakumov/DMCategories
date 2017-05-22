@@ -96,7 +96,7 @@
 #pragma mark - Input Notifications
 
 - (void)textDidBeginEditing:(NSNotification *)notification {
-    id responder = notification.object;
+    UIResponder *responder = notification.object;
     
     if (!responder) return;
     if (![responder isKindOfClass:[UIResponder class]]) return;
