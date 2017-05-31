@@ -24,6 +24,30 @@
     self.frame = frame;
 }
 
+#pragma mark - Origin alignment
+
+- (void)alignFrameRightToRightSuperview {
+    [self alignFrameRightToRightSuperviewWithOffset:0.0];
+}
+
+- (void)alignFrameRightToRightSuperviewWithOffset:(CGFloat)value {
+    CGRect frame = self.frame;
+    CGRect superFrame = self.superview.frame;
+    frame.origin.x = superFrame.size.width - frame.size.width + value;
+    self.frame = frame;
+}
+
+- (void)alignFrameBottomToBottomSuperview {
+    [self alignFrameBottomToBottomSuperviewWithOffset:0.0];
+}
+
+- (void)alignFrameBottomToBottomSuperviewWithOffset:(CGFloat)value {
+    CGRect frame = self.frame;
+    CGRect superFrame = self.superview.frame;
+    frame.origin.y = superFrame.size.height - frame.size.height + value;
+    self.frame = frame;
+}
+
 #pragma mark - Size
 
 - (void)setFrameSizeWidth:(CGFloat)value {

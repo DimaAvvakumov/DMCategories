@@ -14,6 +14,12 @@
 - (void)setFrameOriginX:(CGFloat)value;
 - (void)setFrameOriginY:(CGFloat)value;
 
+#pragma mark - Origin alignment
+- (void)alignFrameRightToRightSuperview;
+- (void)alignFrameRightToRightSuperviewWithOffset:(CGFloat)value;
+- (void)alignFrameBottomToBottomSuperview;
+- (void)alignFrameBottomToBottomSuperviewWithOffset:(CGFloat)value;
+
 #pragma mark - Size
 - (void)setFrameSizeWidth:(CGFloat)value;
 - (void)setFrameSizeHeight:(CGFloat)value;
