@@ -22,6 +22,7 @@
 		188F97081DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97001DB5EF0A0048CA37 /* NSDictionary+SimpleGetters.m */; };
 		188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F97031DB5EF0A0048CA37 /* NSString+TextSize.m */; };
 		18A4FA2D1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A4FA2C1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m */; };
+		18B66FE91EF260B6005EF14C /* UIColor+DMInterpolate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B66FE81EF260B6005EF14C /* UIColor+DMInterpolate.m */; };
 		18FEBFB31E6EBB9200531EA2 /* DMKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FEBFB21E6EBB9200531EA2 /* DMKeyboardManager.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		188F970A1DB5EF190048CA37 /* DMCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMCategories.h; sourceTree = "<group>"; };
 		18A4FA2B1EA0DB91004A5643 /* UIButton+TemporaryDisabled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TemporaryDisabled.h"; sourceTree = "<group>"; };
 		18A4FA2C1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TemporaryDisabled.m"; sourceTree = "<group>"; };
+		18B66FE71EF260B6005EF14C /* UIColor+DMInterpolate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DMInterpolate.h"; sourceTree = "<group>"; };
+		18B66FE81EF260B6005EF14C /* UIColor+DMInterpolate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DMInterpolate.m"; sourceTree = "<group>"; };
 		18FEBFB11E6EBB9200531EA2 /* DMKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMKeyboardManager.h; sourceTree = "<group>"; };
 		18FEBFB21E6EBB9200531EA2 /* DMKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMKeyboardManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +137,7 @@
 			children = (
 				188F96F11DB5EF0A0048CA37 /* animations */,
 				188F96F41DB5EF0A0048CA37 /* buttons */,
+				18B66FE61EF260A2005EF14C /* colors */,
 				188F96F81DB5EF0A0048CA37 /* fonts */,
 				183EF4411ED2F78300B5FB0C /* geometric */,
 				188F96FB1DB5EF0A0048CA37 /* keyboard */,
@@ -219,6 +223,15 @@
 			path = TemporaryDisabled;
 			sourceTree = "<group>";
 		};
+		18B66FE61EF260A2005EF14C /* colors */ = {
+			isa = PBXGroup;
+			children = (
+				18B66FE71EF260B6005EF14C /* UIColor+DMInterpolate.h */,
+				18B66FE81EF260B6005EF14C /* UIColor+DMInterpolate.m */,
+			);
+			path = colors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +310,7 @@
 				188F96E11DB5ED3D0048CA37 /* ViewController.m in Sources */,
 				18FEBFB31E6EBB9200531EA2 /* DMKeyboardManager.m in Sources */,
 				188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */,
+				18B66FE91EF260B6005EF14C /* UIColor+DMInterpolate.m in Sources */,
 				188F97051DB5EF0A0048CA37 /* UIButton+BackgroundColor.m in Sources */,
 				188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */,
 				188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */,
