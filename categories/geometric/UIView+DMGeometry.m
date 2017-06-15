@@ -62,4 +62,18 @@
     self.frame = frame;
 }
 
+#pragma mark - Center
+
+- (void)setCenterX:(CGFloat)value {
+    CGPoint center = self.center;
+    center.x = value;
+    [self setCenter:center];
+}
+
+- (void)setCenterY:(CGFloat)value {
+    CGPoint center = self.center;
+    center.y = value;
+    [self setCenter:center];
+}
+
 @end

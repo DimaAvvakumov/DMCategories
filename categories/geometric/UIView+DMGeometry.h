@@ -24,4 +24,9 @@
 - (void)setFrameSizeWidth:(CGFloat)value;
 - (void)setFrameSizeHeight:(CGFloat)value;
 
+#pragma mark - Center
+- (void)setCenterX:(CGFloat)value;
+- (void)setCenterY:(CGFloat)value;
+
+
 @end
