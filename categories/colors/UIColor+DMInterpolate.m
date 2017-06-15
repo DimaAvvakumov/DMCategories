@@ -15,6 +15,10 @@
     if (fraction < 0.0) fraction = 0.0;
     if (fraction > 1.0) fraction = 1.0;
     
+    /* optimize */
+    if (fraction == 0.0) return start;
+    if (fraction == 1.0) return end;
+    
     size_t startNumComponents = CGColorGetNumberOfComponents(start.CGColor);
     const CGFloat *startComponents = CGColorGetComponents(start.CGColor);
     
