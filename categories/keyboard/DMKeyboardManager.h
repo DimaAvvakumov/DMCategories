@@ -23,4 +23,9 @@
 
 - (void)resignKeyboard;
 
+#pragma mark - Observing
+- (void)addKeyboardObserver:(id)observer forBeginEditingEvent:(void(^)(UIResponder *newResponder))beginEventBlock;
+- (void)addKeyboardObserver:(id)observer forKeyboardEvent:(void(^)(CGFloat height, UIResponder *firstResponder))keyboardEventBlock;
+- (void)removeKeyboardObserver:(id)observer;
+
 @end

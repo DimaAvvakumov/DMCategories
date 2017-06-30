@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) UIResponder *firstResponder;
 
+@property (strong, nonatomic) NSMutableDictionary <NSString *, void(^)(UIResponder *newResponder)> *beginEditingEventsObservers;
+@property (strong, nonatomic) NSMutableDictionary <NSString *, void(^)(CGFloat height, UIResponder *firstResponder)> *keyboardEventsObservers;
+
 @end
 
 @implementation DMKeyboardManager
@@ -34,6 +37,9 @@
         self.firstResponder = nil;
         [self startObservingDidBeginEditingNotification];
         [self startObservingKeyboardNotifications];
+        
+        self.beginEditingEventsObservers = [NSMutableDictionary dictionaryWithCapacity:10];
+        self.keyboardEventsObservers = [NSMutableDictionary dictionaryWithCapacity:10];
     }
     return self;
 }
@@ -102,6 +108,8 @@
     if (![responder isKindOfClass:[UIResponder class]]) return;
     
     self.firstResponder = responder;
+    
+    [self sendByObserversDidBeginEventWithResponder:responder];
 }
 
 - (void)keyboardWillShowOrHideNotification:(NSNotification *)notification {
@@ -112,6 +120,11 @@
     CGFloat keyboardHeight = isShowNotification ? CGRectGetHeight(keyboardFrame) : 0.0;
 
     self.keyboardHeight = keyboardHeight;
+    
+    UIResponder *responder = self.firstResponder;
+    self.firstResponder = nil;
+    
+    [self sendByObserversKeyboardEventWithHeight:keyboardHeight firstResponder:responder];
 }
 
 #pragma mark - Resign
@@ -120,12 +133,57 @@
     UIResponder *responder = self.firstResponder;
     if (responder == nil) return;
     
-    self.firstResponder = nil;
-    
     if (responder.isFirstResponder) {
         [responder resignFirstResponder];
     } else {
         NSLog(@"is not First Responder");
+    }
+}
+
+#pragma mark - Observing
+
+- (void)addKeyboardObserver:(id)observer forBeginEditingEvent:(void(^)(UIResponder *newResponder))beginEventBlock {
+    NSString *key = [NSString stringWithFormat:@"%p", observer];
+    NSMutableDictionary *observers = self.beginEditingEventsObservers;
+    
+    [observers setObject:[beginEventBlock copy] forKey:key];
+}
+
+- (void)addKeyboardObserver:(id)observer forKeyboardEvent:(void(^)(CGFloat height, UIResponder *firstResponder))keyboardEventBlock {
+    NSString *key = [NSString stringWithFormat:@"%p", observer];
+    NSMutableDictionary *observers = self.keyboardEventsObservers;
+    
+    [observers setObject:[keyboardEventBlock copy] forKey:key];
+}
+
+- (void)removeKeyboardObserver:(id)observer {
+    NSString *key = [NSString stringWithFormat:@"%p", observer];
+    
+    [self.beginEditingEventsObservers removeObjectForKey:key];
+    [self.keyboardEventsObservers removeObjectForKey:key];
+}
+
+#pragma mark - Send events by observers
+
+- (void)sendByObserversDidBeginEventWithResponder:(UIResponder *)responder {
+    NSArray *allkeys = [self.beginEditingEventsObservers allKeys];
+    for (NSString *key in allkeys) {
+        void(^block)(UIResponder *newResponder) = [self.beginEditingEventsObservers objectForKey:key];
+        
+        if (block) {
+            block( responder );
+        }
+    }
+}
+
+- (void)sendByObserversKeyboardEventWithHeight:(CGFloat)height firstResponder:(UIResponder *)firstResponder {
+    NSArray *allkeys = [self.keyboardEventsObservers allKeys];
+    for (NSString *key in allkeys) {
+        void(^block)(CGFloat height, UIResponder *newResponder) = [self.keyboardEventsObservers objectForKey:key];
+        
+        if (block) {
+            block( height, firstResponder );
+        }
     }
 }
 

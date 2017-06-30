@@ -18,5 +18,6 @@
 #import "NSString+TextSize.h"
 #import "UIView+DMGeometry.h"
 #import "UIColor+DMInterpolate.h"
+#import "UIView+Recursion.h"
 
 #endif /* DMCategories_h */

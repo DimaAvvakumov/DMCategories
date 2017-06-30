@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181AD9961F01105C00BFCAAC /* UIView+Recursion.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9951F01105C00BFCAAC /* UIView+Recursion.m */; };
 		182DC4F41E9F6FBD00E39B43 /* UIButton+NoAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */; };
 		183EF4441ED2F7A400B5FB0C /* UIView+DMGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EF4431ED2F7A400B5FB0C /* UIView+DMGeometry.m */; };
 		188F96DB1DB5ED3D0048CA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F96DA1DB5ED3D0048CA37 /* main.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181AD9941F01105C00BFCAAC /* UIView+Recursion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Recursion.h"; sourceTree = "<group>"; };
+		181AD9951F01105C00BFCAAC /* UIView+Recursion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Recursion.m"; sourceTree = "<group>"; };
 		182DC4F21E9F6FBD00E39B43 /* UIButton+NoAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NoAnimation.h"; sourceTree = "<group>"; };
 		182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NoAnimation.m"; sourceTree = "<group>"; };
 		183EF4421ED2F7A400B5FB0C /* UIView+DMGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DMGeometry.h"; sourceTree = "<group>"; };
@@ -73,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181AD9931F01104F00BFCAAC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				181AD9941F01105C00BFCAAC /* UIView+Recursion.h */,
+				181AD9951F01105C00BFCAAC /* UIView+Recursion.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		182DC4EE1E9F6F8500E39B43 /* NoAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +155,7 @@
 				188F96FB1DB5EF0A0048CA37 /* keyboard */,
 				188F96FE1DB5EF0A0048CA37 /* simpleGetters */,
 				188F97011DB5EF0A0048CA37 /* textSize */,
+				181AD9931F01104F00BFCAAC /* views */,
 				188F970A1DB5EF190048CA37 /* DMCategories.h */,
 			);
 			path = categories;
@@ -315,6 +328,7 @@
 				188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */,
 				188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */,
 				188F96DB1DB5ED3D0048CA37 /* main.m in Sources */,
+				181AD9961F01105C00BFCAAC /* UIView+Recursion.m in Sources */,
 				183EF4441ED2F7A400B5FB0C /* UIView+DMGeometry.m in Sources */,
 				188F97061DB5EF0A0048CA37 /* NSString+ApplicationFonts.m in Sources */,
 				18A4FA2D1EA0DB91004A5643 /* UIButton+TemporaryDisabled.m in Sources */,
