@@ -122,7 +122,9 @@
     self.keyboardHeight = keyboardHeight;
     
     UIResponder *responder = self.firstResponder;
-    self.firstResponder = nil;
+    if (keyboardHeight == 0.0) {
+        self.firstResponder = nil;
+    }
     
     [self sendByObserversKeyboardEventWithHeight:keyboardHeight firstResponder:responder];
 }
