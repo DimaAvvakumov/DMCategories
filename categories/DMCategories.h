@@ -19,5 +19,6 @@
 #import "UIView+DMGeometry.h"
 #import "UIColor+DMInterpolate.h"
 #import "UIView+Recursion.h"
+#import "UIImage+TintedImage.h"
 
 #endif /* DMCategories_h */

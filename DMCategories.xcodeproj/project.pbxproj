@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18189BF51F1F774300893CFB /* UIImage+TintedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18189BF41F1F774300893CFB /* UIImage+TintedImage.m */; };
 		181AD9961F01105C00BFCAAC /* UIView+Recursion.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9951F01105C00BFCAAC /* UIView+Recursion.m */; };
 		182DC4F41E9F6FBD00E39B43 /* UIButton+NoAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 182DC4F31E9F6FBD00E39B43 /* UIButton+NoAnimation.m */; };
 		183EF4441ED2F7A400B5FB0C /* UIView+DMGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EF4431ED2F7A400B5FB0C /* UIView+DMGeometry.m */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18189BF31F1F774300893CFB /* UIImage+TintedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TintedImage.h"; sourceTree = "<group>"; };
+		18189BF41F1F774300893CFB /* UIImage+TintedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TintedImage.m"; sourceTree = "<group>"; };
 		181AD9941F01105C00BFCAAC /* UIView+Recursion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Recursion.h"; sourceTree = "<group>"; };
 		181AD9951F01105C00BFCAAC /* UIView+Recursion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Recursion.m"; sourceTree = "<group>"; };
 		182DC4F21E9F6FBD00E39B43 /* UIButton+NoAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NoAnimation.h"; sourceTree = "<group>"; };
@@ -76,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18189BF21F1F773000893CFB /* image */ = {
+			isa = PBXGroup;
+			children = (
+				18189BF31F1F774300893CFB /* UIImage+TintedImage.h */,
+				18189BF41F1F774300893CFB /* UIImage+TintedImage.m */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		181AD9931F01104F00BFCAAC /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 				18B66FE61EF260A2005EF14C /* colors */,
 				188F96F81DB5EF0A0048CA37 /* fonts */,
 				183EF4411ED2F78300B5FB0C /* geometric */,
+				18189BF21F1F773000893CFB /* image */,
 				188F96FB1DB5EF0A0048CA37 /* keyboard */,
 				188F96FE1DB5EF0A0048CA37 /* simpleGetters */,
 				188F97011DB5EF0A0048CA37 /* textSize */,
@@ -271,7 +284,7 @@
 		188F96CE1DB5ED3C0048CA37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Dmitry Avvakumov";
 				TargetAttributes = {
 					188F96D51DB5ED3D0048CA37 = {
@@ -324,6 +337,7 @@
 				18FEBFB31E6EBB9200531EA2 /* DMKeyboardManager.m in Sources */,
 				188F97091DB5EF0A0048CA37 /* NSString+TextSize.m in Sources */,
 				18B66FE91EF260B6005EF14C /* UIColor+DMInterpolate.m in Sources */,
+				18189BF51F1F774300893CFB /* UIImage+TintedImage.m in Sources */,
 				188F97051DB5EF0A0048CA37 /* UIButton+BackgroundColor.m in Sources */,
 				188F96DE1DB5ED3D0048CA37 /* AppDelegate.m in Sources */,
 				188F97071DB5EF0A0048CA37 /* UIViewController+KeyboardBehavior.m in Sources */,
@@ -375,6 +389,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -422,6 +437,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
