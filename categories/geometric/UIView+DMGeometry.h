@@ -21,6 +21,7 @@
 - (void)alignFrameBottomToBottomSuperviewWithOffset:(CGFloat)value;
 
 #pragma mark - Size
+- (void)setFrameSize:(CGSize)size;
 - (void)setFrameSizeWidth:(CGFloat)value;
 - (void)setFrameSizeHeight:(CGFloat)value;
 

@@ -50,6 +50,12 @@
 
 #pragma mark - Size
 
+- (void)setFrameSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
 - (void)setFrameSizeWidth:(CGFloat)value {
     CGRect frame = self.frame;
     frame.size.width = value;
