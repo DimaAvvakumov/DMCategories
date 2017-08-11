@@ -10,8 +10,6 @@
 
 @interface DMKeyboardManager ()
 
-@property (weak, nonatomic) UIResponder *firstResponder;
-
 @property (strong, nonatomic) NSMutableDictionary <NSString *, void(^)(UIResponder *newResponder)> *beginEditingEventsObservers;
 @property (strong, nonatomic) NSMutableDictionary <NSString *, void(^)(CGFloat height, UIResponder *firstResponder)> *keyboardEventsObservers;
 

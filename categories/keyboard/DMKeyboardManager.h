@@ -14,6 +14,9 @@
 #pragma mark - Shared instance
 + (DMKeyboardManager *) sharedInstance;
 
+/* first responder */
+@property (weak, nonatomic) UIResponder *firstResponder;
+
 /* show / hide button */
 @property (strong, nonatomic) UIImage *keyboardImage;
 @property (strong, nonatomic) NSString *keyboardTitle;
