@@ -37,7 +37,17 @@
 }
 
 - (CGFloat)kb_keyboardHeight {
-    return [self.kb_keyboardManager keyboardHeight];
+    CGFloat keyboardHeight = [self.kb_keyboardManager keyboardHeight];
+    
+    // Safe Guade
+    if (@available(iOS 11.0, *)) {
+        if (keyboardHeight > 0) {
+            CGFloat guideHeight = self.view.safeAreaInsets.bottom;
+            keyboardHeight = keyboardHeight - guideHeight;
+        }
+    }
+    
+    return keyboardHeight;
 }
 
 #pragma mark - Properties isKeyboardPresented

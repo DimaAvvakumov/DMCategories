@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DMCategories"
-  s.version      = "3.2.0"
+  s.version      = "3.2.1"
   s.summary      = "Some categories for iOS developers"
   s.homepage     = "https://github.com/DimaAvvakumov/DMCategories.git"
   s.license      = { :type => "MIT", :file => "LICENSE" }
